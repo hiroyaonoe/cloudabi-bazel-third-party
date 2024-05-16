@@ -79,7 +79,7 @@
  
 --- googletest/src/gtest.cc
 +++ googletest/src/gtest.cc
-@@ -183,6 +183,10 @@ bool g_help_flag = false;
+@@ -183,6 +183,10 @@
  
  // Utilty function to Open File for Writing
  static FILE* OpenFileForWriting(const std::string& output_file) {
