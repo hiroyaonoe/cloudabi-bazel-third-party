@@ -3,6 +3,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 def third_party_repositories():
     http_archive(
         name = "boringssl",
+        patch_tool = "patch",
         patches = [
             "@org_cloudabi_bazel_third_party//:patches/boringssl/cloudabi.diff",
             "@org_cloudabi_bazel_third_party//:patches/boringssl/const-warning.diff",
@@ -13,6 +14,7 @@ def third_party_repositories():
     http_archive(
         name = "com_github_cares_cares",
         build_file = "@com_github_grpc_grpc//third_party:cares/cares.BUILD",
+        patch_tool = "patch",
         patches = [
             "@org_cloudabi_bazel_third_party//:patches/com_github_cares_cares/const-warning.diff",
             "@org_cloudabi_bazel_third_party//:patches/com_github_cares_cares/force-sock_funcs.diff",
@@ -28,6 +30,7 @@ def third_party_repositories():
 
     http_archive(
         name = "com_github_grpc_grpc",
+        patch_tool = "patch",
         patches = [
             "@org_cloudabi_bazel_third_party//:patches/com_github_grpc_grpc/cares.diff",
             "@org_cloudabi_bazel_third_party//:patches/com_github_grpc_grpc/clock_gettime.diff",
@@ -51,6 +54,7 @@ def third_party_repositories():
     http_archive(
         name = "com_github_open_source_parsers_jsoncpp",
         build_file = "@org_cloudabi_bazel_third_party//:BUILD.jsoncpp",
+        patch_tool = "patch",
         sha256 =
             "c49deac9e0933bcb7044f08516861a2d560988540b23de2ac1ad443b219afdb6",
         strip_prefix = "jsoncpp-1.8.4",
@@ -60,6 +64,7 @@ def third_party_repositories():
     http_archive(
         name = "com_github_jbeder_yaml_cpp",
         build_file = "@org_cloudabi_bazel_third_party//:BUILD.yaml_cpp",
+        patch_tool = "patch",
         patches = ["@org_cloudabi_bazel_third_party//:patches/com_github_jbeder_yaml_cpp/no-ifstream.diff"],
         sha256 = "e4d8560e163c3d875fd5d9e5542b5fd5bec810febdcba61481fe5fc4e6b1fd05",
         strip_prefix = "yaml-cpp-yaml-cpp-0.6.2",
@@ -68,6 +73,7 @@ def third_party_repositories():
 
     http_archive(
         name = "com_google_googletest",
+        patch_tool = "patch",
         patches = [
             "@org_cloudabi_bazel_third_party//:patches/com_google_googletest/no-fopen.diff",
             "@org_cloudabi_bazel_third_party//:patches/com_google_googletest/no-stdout.diff",
@@ -80,6 +86,7 @@ def third_party_repositories():
 
     http_archive(
         name = "com_google_protobuf",
+        patch_tool = "patch",
         patches = [
             "@org_cloudabi_bazel_third_party//:patches/com_google_protobuf/endian.diff",
             "@org_cloudabi_bazel_third_party//:patches/com_google_protobuf/no-filesystem-namespace.diff",
